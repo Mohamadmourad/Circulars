@@ -1,0 +1,42 @@
+header{
+   background-color: #364F6B;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 20px;
+}
+
+header img{
+    width: 120px;
+    cursor: pointer;
+}
+
+.btnContainer{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnContainer a{
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.btnContainer a:hover{
+    transform: scale(0.9);
+}
+
+.signUpBtn{
+  background-color: #3Fc1C9;
+}
+
+.logInBtn{
+    background-color: #FC5185;
+}
+
