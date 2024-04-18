@@ -1,13 +1,14 @@
 import '../styles/forms.css'
 import { Link } from 'react-router-dom';
+import createAcc from '../functions/createAcc';
 
 
-const CreateProfile = () => {
+const CreateProfile = ({email,password}) => {
     return (
         <div className="CreateProfile">
              <div className="formBody">
                 <div className="formOutline">
-                    <h3>SignUp</h3>
+                    <h3>CreateProfile</h3>
                     <div className="inputArea">
                         <div className="usernameForm inputChunk">
                             <label>Name</label>
@@ -22,7 +23,7 @@ const CreateProfile = () => {
                             <input type="text" placeholder='bio'/>
                         </div>
                         <div className="buttonArea signUpBtnPage">
-                            <button>Create</button>
+                            <button onClick={()=>{createAcc(email,password)}}>Create</button>
                         </div>
                     </div>
                 </div>

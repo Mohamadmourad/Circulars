@@ -67,12 +67,16 @@
     align-items: center;
 }
 
-.btn:hover{
-    transform: scale(0.9);
+.formBody button:hover{
+    transform: scale(1.1);
 }
 
 .signUpBtnPage{
     justify-content: end;
     margin-right: 50px;
+}
+
+.inputChunk span{
+    color: #FC5185;
 }
 
