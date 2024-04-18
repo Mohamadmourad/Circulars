@@ -1,0 +1,80 @@
+.profileTop{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 90px;
+}
+
+.profileTop img{
+    width: 150px;
+    border-radius: 100%;
+}
+
+.profileTopLeft{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.profileInfo span{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bio{
+    width: 40%;
+}
+
+.followersArea{
+    display: flex;
+    gap: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.following ,.followers{
+    height: 110px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.followBtn{
+    display: flex;
+    justify-content: end;
+    padding-right: 80px;
+}
+
+.followBtn button{
+    border: none;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+    background-color: #FC5185;
+    color: #F5F5F5;
+    cursor: pointer;
+}
+
+.followBtn button:hover{
+    transform: scale(0.9);
+}
+
+.postArea{
+    border: solid;
+}
+
+h2{
+    text-align: center;
+}

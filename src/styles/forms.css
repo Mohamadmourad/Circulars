@@ -1,0 +1,78 @@
+.formBody{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.formOutline{
+    border-radius: 10px;
+    background-color: #364F6B;
+    width: 90%;
+    max-width: 500px;
+    padding: 0 0 20px 0;
+}
+
+.formBody h3{
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 27px;
+}
+
+.inputArea{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #F5F5F5;
+    gap: 20px;
+}
+
+.inputArea input{
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.inputChunk{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 5px;
+}
+
+.buttonArea{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buttonArea span a{
+    color: #FC5185;
+}
+
+.btn,button{
+    border: none;
+    background-color: #FC5185;
+    color: #F5F5F5;
+    width: 70px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    transform: scale(0.9);
+}
+
+.signUpBtnPage{
+    justify-content: end;
+    margin-right: 50px;
+}
+

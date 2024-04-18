@@ -11,13 +11,13 @@ const Header = () => {
           <nav>
             {!isLogedIn &&   //if user is not loged in
              <div className="btnContainer">
-              <Link to="/" className="signUpBtn">SignUp</Link>
-              <Link to="/" className="logInBtn">LogIn</Link>
+              <Link to="/SignUp" className="signUpBtn">SignUp</Link>
+              <Link to="/Login" className="logInBtn">Login</Link>
             </div>}
 
             {isLogedIn &&   //if user is loged in
              <div className="container">
-              
+
             </div>}
           </nav>
         </header>
