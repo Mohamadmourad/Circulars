@@ -10,6 +10,7 @@
     width: 90%;
     max-width: 500px;
     padding: 0 0 20px 0;
+    box-shadow: 1px 1px 10px 1px #364F6B;
 }
 
 .formBody h3{
