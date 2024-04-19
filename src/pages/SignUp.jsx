@@ -10,11 +10,16 @@ const SignUp = () => {
     const [passwordConfirm,setPasswordConfirm] = useState('');
     const [username,setUsername] = useState('');
 
-    const[passError,setPassError] = useState('')
+    const[passError,setPassError] = useState('');
+    const[usernameError,setUsernameError] = useState('');
 
     const navigate = useNavigate();
 
     const onSubmit = ()=>{
+        if(username.length == 0){
+            setUsernameError('Enter username');
+            return false;
+        }
         if(password.length < 8){
             setPassError('password should atleast be 8 characters');
             return false;
@@ -37,7 +42,9 @@ const SignUp = () => {
                         <div className="usernameForm inputChunk">
                             <label>Username</label>
                             <input type="text" placeholder='Ex: mourad511'
-                            onChange={(e)=>{setUsername(e.target.value)}}/>
+                            onChange={(e)=>{setUsername(e.target.value)
+                                setUsernameError('')}}/>
+                             <span>{usernameError}</span>
                         </div>
                         <div className="emailForm inputChunk">
                             <label>Email</label>
