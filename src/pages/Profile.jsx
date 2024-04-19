@@ -1,9 +1,21 @@
 import "../styles/profile.css"
 import pfp from "../images/profile/tanjiro2.jpg"
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import loadProfileData from "../functions/loadProfileData";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
     const [isMyAcc,setIsMyAcc] = useState(false);
+    const [info,setInfo] = useState({});
+    const { userId } = useParams();
+
+       const getInfo = async ()=>{
+         setInfo( await loadProfileData(userId));
+       }
+
+    useEffect(()=>{
+        getInfo();
+    },[]);
 
     return (
         <div className="Profile">
@@ -11,8 +23,7 @@ const Profile = () => {
                 <div className="profileTopLeft">
                   <img src={pfp} alt="pfp"/>
                   <div className="profileInfo">
-                    <span>Mohamad Mourad</span>
-                    <p className="bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error praesentium odit autem suscipit omnis accusamus nam ratione, inventore incidunt</p> 
+                    <span>{info.username}</span>
                   </div>
                 </div>
                 <div className="followersArea">
