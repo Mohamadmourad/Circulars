@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { db,auth } from '../config/firebase';
 import { addDoc,collection } from 'firebase/firestore';
+import Header from '../components/Header';
 
 const CreatePost = () => {
     const [post,setPost]= useState('');
@@ -24,6 +25,7 @@ const CreatePost = () => {
 
     return (
         <div className="CreatePost">
+            <Header></Header>
             <div className="formBody">
                 <div className="formOutline">
                     <h3>Create Post</h3>

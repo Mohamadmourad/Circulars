@@ -51,12 +51,12 @@
 }
 
 .buttonArea span a{
-    color: #FC5185;
+    color: #CE2D4F;
 }
 
 .btn,button{
     border: none;
-    background-color: #FC5185;
+    background-color: #CE2D4F;
     color: #F5F5F5;
     width: 70px;
     height: 35px;
@@ -78,7 +78,7 @@
 }
 
 .inputChunk span{
-    color: #FC5185;
+    color: #CE2D4F;
 }
 
 #postInput{

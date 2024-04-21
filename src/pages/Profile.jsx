@@ -9,11 +9,12 @@ const Profile = () => {
     const [info,setInfo] = useState({});
     const { userId } = useParams();
 
-       const getInfo = async ()=>{
-         setInfo( await loadProfileData(userId));
-       }
 
     useEffect(()=>{
+        const getInfo = async ()=>{
+            setInfo( await loadProfileData(userId));
+          }
+        setIsMyAcc(false);
         getInfo();
     },[]);
 

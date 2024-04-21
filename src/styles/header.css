@@ -40,3 +40,49 @@ header img{
     background-color: #CE2D4F;
 }
 
+@media all and (max-width: 480px){
+    .btnContainer a{
+        width: 68px;
+        height: 40px;
+    }
+}
+.prfcontainer{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+    gap: 20px;
+    font-size: 18px;
+    transition: all 0.2s ease; 
+    
+
+}
+.prfcontainer img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:transform 0.2s ease, border 0.01s ease;
+    border: #CE2D4F;
+}
+.prfcontainer img:hover{
+    transform: scale(0.9);
+    border: #CE2D4F 2px solid;
+}
+.prfcontainer .innerTxtHeader a{
+    transition: all 0.2s ease;
+    
+}
+.active{
+    color: #CE2D4F;
+    
+}
+.prfcontainer .innerTxtHeader a:hover{
+    font-weight: bold;
+    font-size: 18px;
+    color: #CE2D4F;
+}
+
