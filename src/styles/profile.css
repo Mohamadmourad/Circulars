@@ -2,7 +2,7 @@
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 90px;
 }
 
@@ -13,8 +13,11 @@
 
 .profileTopLeft{
     display: flex;
-    align-items: center;
     gap: 30px;
+}
+
+.profileTopLeft span{
+    margin-top: 20px;
 }
 
 .profileInfo{

@@ -3,18 +3,27 @@ import pfp from "../images/profile/tanjiro2.jpg"
 import { useState,useEffect } from "react";
 import loadProfileData from "../functions/loadProfileData";
 import { useParams } from "react-router-dom";
+import { auth } from "../config/firebase";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-    const [isMyAcc,setIsMyAcc] = useState(false);
+    const [isMyAcc,setIsMyAcc] = useState(true);
     const [info,setInfo] = useState({});
     const { userId } = useParams();
+
+    const navigate = useNavigate();
+
+    const logout = async ()=>{
+      await signOut(auth);
+      navigate('/');
+    }
 
 
     useEffect(()=>{
         const getInfo = async ()=>{
             setInfo( await loadProfileData(userId));
           }
-        setIsMyAcc(false);
         getInfo();
     },[]);
 
@@ -24,7 +33,7 @@ const Profile = () => {
                 <div className="profileTopLeft">
                   <img src={pfp} alt="pfp"/>
                   <div className="profileInfo">
-                    <span>{info.username}</span>
+                    <span>{'pfp'}</span> {/* info.username */}
                   </div>
                 </div>
                 <div className="followersArea">
@@ -38,9 +47,9 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-
             <div className="followBtn">  {/*follow button area */}
-               {isMyAcc && <button>Follow</button>}
+               {!isMyAcc && <button>Follow</button>}
+               {isMyAcc && <button onClick={()=>{logout()}}>Logout</button>}
             </div>
 
             <h2>Posts</h2>
