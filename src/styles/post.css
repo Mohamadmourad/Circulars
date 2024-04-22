@@ -1,0 +1,36 @@
+.Post{
+    
+    width: 90%;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 8px 12px 10px -9px #364F6B;
+    border-radius: 10px;
+}
+.postHeader{
+    display: flex;
+    font-size: 14px;
+    gap: 5px;
+    color: #362624;
+}
+.postHeader img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:transform 0.2s ease, border 0.01s ease;
+    border: #3FC1C9 solid 2px;
+}
+.postBorder{
+
+    border-left: 3px solid #3FC1C9;
+    margin: 10px 0;
+    
+}
+.postContent{
+
+}
+.postContent p{
+ text-align: justify;
+ margin-left: 10px;
+}
