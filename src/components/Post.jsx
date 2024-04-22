@@ -1,5 +1,5 @@
 import "../styles/post.css";
-import pfp from "../images/profile/tanjiro2.jpg"; // Importing the profile picture
+import pfp from "../images/profile/1.png"; 
 
 const Post = () => {
   return (

@@ -4,11 +4,13 @@ import logo from "../images/logo.png";
 import "../styles/header.css";
 import { auth } from "../config/firebase";
 import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
-import pfp from "../images/profile/tanjiro2.jpg";
+import loadProfileData from "../functions/loadProfileData";
 
 const Header = () => {
   const [isLogedIn, setIsLogIn] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [info,setInfo] = useState({});
+  const [pfp,setPfp]= useState(require(`../images/profile/1.png`));
 
   const auth = getAuth();
 
@@ -20,6 +22,21 @@ const Header = () => {
       setIsLogIn(false);
     }
   });
+
+  useEffect(()=>{
+    const getData = async ()=>{
+      if(isLogedIn){
+        const data = await loadProfileData(userId);
+        setInfo(data);
+
+        if(info.photoLink != null){
+          setPfp(require(`../images/profile/${info.photoLink}`));
+          console.log(require(`../images/profile/${info.photoLink}`))
+      }
+      }
+    }
+    getData();
+  },[info.photoLink,isLogedIn]);
 
   return (
     <header>
@@ -48,7 +65,7 @@ const Header = () => {
             </span>
             <span>
               <Link to={`/profile/${userId}`}>
-                <img src={pfp} alt="pfpImg" />
+                <img src={ pfp } alt="pfpImg" />
               </Link>
             </span>
           </div>

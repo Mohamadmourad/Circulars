@@ -1,5 +1,4 @@
 import "../styles/profile.css"
-import pfp from "../images/profile/tanjiro2.jpg"
 import { useState,useEffect } from "react";
 import loadProfileData from "../functions/loadProfileData";
 import { useParams } from "react-router-dom";
@@ -7,54 +6,65 @@ import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import FollowBtn from "../components/FollowBtn";
-import checkFollow from "../functions/checkFollow";
+import getFollowerCount from "../functions/getFollowerCount";
+import getFollowingCount from "../functions/getFollowingCount";
 
 const Profile = () => {
     const [isMyAcc,setIsMyAcc] = useState(true);
     const [info,setInfo] = useState({});
-    const [followState,setFollowState] = useState(false);
+    const [followersCount,setFollowersCount] = useState(5);
+    const [followingCount,setFollowingCount] = useState(5);
+    const [pfp,setPfp]= useState(require(`../images/profile/1.png`));
 
     const { userId } = useParams();
 
     const navigate = useNavigate();
+
+     
 
     const logout = async ()=>{
       await signOut(auth);
       navigate('/');
     }
 
-
     useEffect(() => {
         const getInfo = async () => {
-            if (userId !== auth?.currentUser?.uid) {
+            setFollowersCount(await getFollowerCount(userId));
+            setFollowingCount(await getFollowingCount(userId));
+
+            if (userId !== auth?.currentUser?.uid) { // to check if its my acc
                 setIsMyAcc(false);
-            }
+            }  
+
+            const profileData = await loadProfileData(userId); // Load profile data
+            setInfo(profileData);
             
-            setInfo(await loadProfileData(userId));
+            if(info.photoLink != null){
+                setPfp(require(`../images/profile/${info.photoLink}`));
+            }
         }
     
         getInfo();
-    
-    }, [followState]);
+    }, [info.photoLink]);
     
 
     return (
         <div className="Profile">
             <div className="profileTop">
                 <div className="profileTopLeft">
-                  <img src={pfp} alt="pfp"/>
+                  <img src={ pfp } alt="pfp"/>
                   <div className="profileInfo">
-                    <span>{'pfp'}</span> {/* info.username */}
+                    <span>{ info.username }</span> 
                   </div>
                 </div>
                 <div className="followersArea">
                     <div className="following">
                         <span>Following</span>
-                        <span>133</span>
+                        <span>{followersCount}</span>
                     </div>
                     <div className="followers">
                         <span>Followers</span>
-                        <span>343</span>
+                        <span>{followingCount}</span>
                     </div>
                 </div>
             </div>
