@@ -6,10 +6,14 @@ import { useParams } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import FollowBtn from "../components/FollowBtn";
+import checkFollow from "../functions/checkFollow";
 
 const Profile = () => {
     const [isMyAcc,setIsMyAcc] = useState(true);
     const [info,setInfo] = useState({});
+    const [followState,setFollowState] = useState(false);
+
     const { userId } = useParams();
 
     const navigate = useNavigate();
@@ -20,12 +24,19 @@ const Profile = () => {
     }
 
 
-    useEffect(()=>{
-        const getInfo = async ()=>{
-            setInfo( await loadProfileData(userId));
-          }
+    useEffect(() => {
+        const getInfo = async () => {
+            if (userId !== auth?.currentUser?.uid) {
+                setIsMyAcc(false);
+            }
+            
+            setInfo(await loadProfileData(userId));
+        }
+    
         getInfo();
-    },[]);
+    
+    }, [followState]);
+    
 
     return (
         <div className="Profile">
@@ -48,7 +59,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className="followBtn">  {/*follow button area */}
-               {!isMyAcc && <button>Follow</button>}
+               {!isMyAcc && <FollowBtn followingId={userId}/>}
                {isMyAcc && <button onClick={()=>{logout()}}>Logout</button>}
             </div>
 

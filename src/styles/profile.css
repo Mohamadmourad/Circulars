@@ -56,19 +56,6 @@
     padding-right: 80px;
 }
 
-.followBtn button{
-    border: none;
-    width: 70px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    transition: all 0.2s;
-    background-color: #FC5185;
-    color: #F5F5F5;
-    cursor: pointer;
-}
 
 .followBtn button:hover{
     transform: scale(0.9);
@@ -80,4 +67,31 @@
 
 h2{
     text-align: center;
+}
+
+.followBtnElement {
+    background: none;
+    border: solid #FC5185;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+    color: #FC5185;
+    cursor: pointer;
+}
+
+.followBtnElementUnfollow{
+    background-color: #FC5185;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+    color: #F5F5F5;
+    cursor: pointer;
 }
