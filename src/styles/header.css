@@ -1,10 +1,13 @@
 header{
    background-color: #364F6B;
    height: 70px;
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: space-between;
    padding: 0 20px;
+   position: fixed;
+   top: 0;
 }
 
 header img{
@@ -66,7 +69,6 @@ header img{
     border-radius: 50%;
     cursor: pointer;
     transition:transform 0.2s ease, border 0.01s ease;
-    border: #CE2D4F;
 }
 .prfcontainer img:hover{
     transform: scale(0.9);

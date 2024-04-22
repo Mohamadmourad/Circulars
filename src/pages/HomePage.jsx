@@ -1,10 +1,17 @@
 import Header from "../components/Header";
+import Post from "../components/Post";
 
 const HomePage = () => {
     return (
         <div className="HomePage">
           <Header />
-          <h1>HomePage</h1>
+          
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
         </div>
     );
 }
