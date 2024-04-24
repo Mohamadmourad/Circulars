@@ -1,16 +1,18 @@
 import '../styles/forms.css'
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { db,auth } from '../config/firebase';
 import { addDoc,collection } from 'firebase/firestore';
 import Header from '../components/Header';
 
 const CreatePost = () => {
-    const [post,setPost]= useState('');
+    const postRef = useRef(null);
+
     const navigate = useNavigate();
 
     const addPost = async ()=>{
      try{
+        const post = postRef.current.value;
         let postCollection = collection(db,"post");
         await addDoc(postCollection,{
             userId: auth.currentUser.uid,
@@ -33,7 +35,7 @@ const CreatePost = () => {
                         <div className="postForm inputChunk">
                             <label>Post</label>
                             <input type="text" placeholder='...' id='postInput'
-                             onChange={(e)=>{setPost(e.target.value)}}/>
+                             ref={postRef}/>
                         </div>
                         <div className="buttonArea">
                             <button onClick={()=>{addPost()}}>Add Post</button>

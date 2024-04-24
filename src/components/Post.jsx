@@ -1,21 +1,18 @@
 import "../styles/post.css";
-import pfp from "../images/profile/1.png"; 
+import { Link } from "react-router-dom";
 
-const Post = () => {
+const Post = ({username,content,photoLink,userId}) => {
+   let photoUrl = require(`../images/profile/${photoLink}`);
   return (
     <div className="Post">
-      <div className="postHeader">
-        <img src={pfp} alt="profile" />
-        <h2>John Doe</h2>
-      </div>
+      <Link className="postHeader" to={`/profile/${userId}`}>
+        <img src={photoUrl} alt="profile" />
+        <h2>{ username }</h2>
+      </Link>
       <div className="postBorder">
         <div className="postContent">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Error maxime
-            aperiam consequuntur adipisci, deserunt quas veniam assumenda eius
-            
+            { content }
           </p>
         </div>
       </div>

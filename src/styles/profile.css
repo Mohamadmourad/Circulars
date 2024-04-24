@@ -95,3 +95,12 @@ h2{
     color: #F5F5F5;
     cursor: pointer;
 }
+
+.exitButton{
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.exitButton img{
+    width: 30px;
+}

@@ -5,6 +5,7 @@ import "../styles/header.css";
 import { auth } from "../config/firebase";
 import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 import loadProfileData from "../functions/loadProfileData";
+import loadPost from "../functions/loadPost";
 
 const Header = () => {
   const [isLogedIn, setIsLogIn] = useState(false);
@@ -31,7 +32,6 @@ const Header = () => {
 
         if(info.photoLink != null){
           setPfp(require(`../images/profile/${info.photoLink}`));
-          console.log(require(`../images/profile/${info.photoLink}`))
       }
       }
     }

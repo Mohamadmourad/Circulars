@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import FollowBtn from "../components/FollowBtn";
 import getFollowerCount from "../functions/getFollowerCount";
 import getFollowingCount from "../functions/getFollowingCount";
+import exitImg from "../images/assets/exit.svg"
 
 const Profile = () => {
     const [isMyAcc,setIsMyAcc] = useState(true);
@@ -20,11 +21,13 @@ const Profile = () => {
 
     const navigate = useNavigate();
 
-     
-
     const logout = async ()=>{
       await signOut(auth);
       navigate('/');
+    }
+
+    const exit = ()=>{
+        navigate(-1);
     }
 
     useEffect(() => {
@@ -50,6 +53,7 @@ const Profile = () => {
 
     return (
         <div className="Profile">
+            <button className="exitButton" onClick={()=>{exit()}}><img src={exitImg}></img></button>
             <div className="profileTop">
                 <div className="profileTopLeft">
                   <img src={ pfp } alt="pfp"/>
