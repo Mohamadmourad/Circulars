@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Post from "../components/Post";
-import { useState, useEffect } from "react";
 import loadPost from "../functions/loadPost";
+import { useState, useEffect } from "react";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -18,10 +18,6 @@ const HomePage = () => {
     };
     getData();
   }, []);
-
-  useEffect(() => {
-    console.log("Posts state updated:", posts); // Log the updated posts state
-  }, [posts]);
 
   return (
     <div className="HomePage">

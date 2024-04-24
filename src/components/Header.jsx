@@ -2,16 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../images/logo.png";
 import "../styles/header.css";
-import { auth } from "../config/firebase";
-import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
 import loadProfileData from "../functions/loadProfileData";
-import loadPost from "../functions/loadPost";
 
 const Header = () => {
   const [isLogedIn, setIsLogIn] = useState(false);
   const [userId, setUserId] = useState(null);
   const [info,setInfo] = useState({});
-  const [pfp,setPfp]= useState(require(`../images/profile/1.png`));
+  const [pfp,setPfp]= useState(require(`../images/profile/loading.png`));
 
   const auth = getAuth();
 

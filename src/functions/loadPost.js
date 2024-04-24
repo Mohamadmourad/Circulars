@@ -1,5 +1,5 @@
 import { db } from "../config/firebase";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, orderBy } from "firebase/firestore";
 import loadProfileData from "./loadProfileData";
 
 const loadPost = async () => {

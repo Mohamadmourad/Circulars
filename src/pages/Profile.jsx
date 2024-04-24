@@ -9,13 +9,16 @@ import FollowBtn from "../components/FollowBtn";
 import getFollowerCount from "../functions/getFollowerCount";
 import getFollowingCount from "../functions/getFollowingCount";
 import exitImg from "../images/assets/exit.svg"
+import ProfilePost from "../components/ProfilePost";
+import loadProfilePost from "../functions/loadProfilePost";
 
 const Profile = () => {
     const [isMyAcc,setIsMyAcc] = useState(true);
     const [info,setInfo] = useState({});
     const [followersCount,setFollowersCount] = useState(5);
     const [followingCount,setFollowingCount] = useState(5);
-    const [pfp,setPfp]= useState(require(`../images/profile/1.png`));
+    const [pfp,setPfp]= useState(require(`../images/profile/loading.png`));
+    const [postList,setPostList] = useState([]);
 
     const { userId } = useParams();
 
@@ -34,6 +37,7 @@ const Profile = () => {
         const getInfo = async () => {
             setFollowersCount(await getFollowerCount(userId));
             setFollowingCount(await getFollowingCount(userId));
+            setPostList(await loadProfilePost(userId));
 
             if (userId !== auth?.currentUser?.uid) { // to check if its my acc
                 setIsMyAcc(false);
@@ -78,9 +82,11 @@ const Profile = () => {
             </div>
 
             <h2>Posts</h2>
-
+            
             <div className="postArea">
-                
+               {postList.map((post)=>(
+                 <ProfilePost content={post.content} myAccount={isMyAcc}/>
+               ))}
             </div>
         </div>
     );
