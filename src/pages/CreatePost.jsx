@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { db,auth } from '../config/firebase';
 import { addDoc,collection } from 'firebase/firestore';
 import Header from '../components/Header';
+import BottomNav from '../components/BottomNav';
 
 const CreatePost = () => {
     const postRef = useRef(null);
@@ -45,6 +46,7 @@ const CreatePost = () => {
                     </div>
                 </div>
             </div>
+            <BottomNav />
         </div>
     );
 }

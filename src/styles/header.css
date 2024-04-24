@@ -49,13 +49,6 @@ header img{
     background-color: #CE2D4F;
 }
 
-@media all and (max-width: 480px){
-    .btnContainer a{
-        width: 68px;
-        height: 40px;
-        user-select: none;
-    }
-}
 .prfcontainer{
     width: 300px;
     height: 40px;
@@ -63,7 +56,6 @@ header img{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    transition: all 0.2s;
     gap: 20px;
     font-size: 18px;
     transition: all 0.2s ease; 
@@ -95,5 +87,21 @@ header img{
     font-size: 18px;
     color: #CE2D4F;
     
+}
+
+@media all and (max-width: 480px){
+
+    header{
+        padding: 0;
+    }
+    .btnContainer a{
+        width: 68px;
+        height: 40px;
+        user-select: none;
+    }
+
+    .prfcontainer{
+        display: none;
+    }
 }
 

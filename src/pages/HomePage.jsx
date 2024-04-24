@@ -1,3 +1,4 @@
+import BottomNav from "../components/BottomNav";
 import Header from "../components/Header";
 import Post from "../components/Post";
 import loadPost from "../functions/loadPost";
@@ -13,7 +14,7 @@ const HomePage = () => {
         setPosts(data);
         console.log(posts);
       } catch (e) {
-        console.error("Error fetching posts:", e);
+        console.error(e);
       } 
     };
     getData();
@@ -35,6 +36,7 @@ const HomePage = () => {
           ))
         }
       </div>
+      <BottomNav />
     </div>
   );
 };

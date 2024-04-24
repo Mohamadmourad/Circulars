@@ -1,0 +1,27 @@
+.BottomNav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #364F6B;
+    height: 60px;
+    display: none;
+}
+
+.BottomNav nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.BottomNav img{
+    width: 40px;
+    border-radius: 100%;
+}
+
+@media all and (max-width: 480px){
+    .BottomNav{
+        display: flex;
+        align-items: center;
+    }
+}
