@@ -6,6 +6,7 @@
     margin: 50px auto;
     box-shadow: 8px 12px 10px -9px #364F6B;
     border-radius: 10px;
+    
 }
 
 .posts{
@@ -16,6 +17,7 @@
     font-size: 14px;
     gap: 5px;
     color: #362624;
+    user-select: none;
 }
 .postHeader img{
     width: 40px;

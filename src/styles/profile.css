@@ -69,9 +69,9 @@ h2{
     text-align: center;
 }
 
-.followBtnElement {
+.followBtnElementUnfollow {
     background: none;
-    border: solid #FC5185;
+    border: solid #ce2d4f;
     width: 70px;
     height: 40px;
     display: flex;
@@ -79,12 +79,12 @@ h2{
     align-items: center;
     border-radius: 10px;
     transition: all 0.2s;
-    color: #FC5185;
+    color: #ce2d4f;
     cursor: pointer;
 }
 
-.followBtnElementUnfollow{
-    background-color: #FC5185;
+.followBtnElement{
+    background-color: #ce2d4f;
     width: 70px;
     height: 40px;
     display: flex;

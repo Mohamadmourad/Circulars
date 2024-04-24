@@ -1,86 +1,93 @@
-.formBody{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+.formBody {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  user-select: none;
 }
 
-.formOutline{
-    border-radius: 10px;
-    background-color: #364F6B;
-    width: 90%;
-    max-width: 500px;
-    padding: 0 0 20px 0;
-    box-shadow: 1px 1px 10px 1px #364F6B;
+.formOutline {
+  border-radius: 10px;
+  background-color: #364f6b;
+  width: 90%;
+  max-width: 500px;
+  padding: 0 0 20px 0;
+  box-shadow: 1px 1px 10px 1px #364f6b;
 }
 
-.formBody h3{
-    color: #f5f5f5;
-    text-align: center;
-    font-size: 27px;
+.formBody h3 {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 27px;
 }
 
-.inputArea{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: #F5F5F5;
-    gap: 20px;
+.inputArea {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #f5f5f5;
+  gap: 20px;
 }
 
-.inputArea input{
-    border-radius: 5px;
-    border: none;
-    height: 25px;
-    padding-left: 5px;
-    outline: none;
+.inputArea input {
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+  padding-left: 5px;
+  outline: none;
 }
 
-.inputChunk{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    gap: 5px;
+.inputChunk {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 5px;
 }
 
-.buttonArea{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
+.buttonArea {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.buttonArea span a{
-    color: #CE2D4F;
+.buttonArea span a {
+  color: #ce2d4f;
 }
 
-.btn,button{
-    border: none;
-    background-color: #CE2D4F;
-    color: #F5F5F5;
-    width: 70px;
-    height: 35px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn,
+button {
+  border: none;
+  background-color: #ce2d4f;
+  color: #f5f5f5;
+  width: 70px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.formBody button:hover{
-    transform: scale(1.1);
+.formBody button:hover {
+  transform: scale(1.1);
 }
 
-.signUpBtnPage{
-    justify-content: end;
-    margin-right: 50px;
+.signUpBtnPage {
+  justify-content: end;
+  margin-right: 50px;
 }
 
-.inputChunk span{
-    color: #CE2D4F;
+.inputChunk span {
+  color: #ce2d4f;
 }
 
-#postInput{
-    height: 100px;
+#postInput {
+  height: 100px;
+  outline: none;
+  font-size: 15px;
+  text-align: start;
+  unicode-bidi: plaintext;
+  resize: none;
 }

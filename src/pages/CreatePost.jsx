@@ -34,8 +34,10 @@ const CreatePost = () => {
                     <div className="inputArea">
                         <div className="postForm inputChunk">
                             <label>Post</label>
-                            <input type="text" placeholder='...' id='postInput'
-                             ref={postRef}/>
+                            <textarea placeholder='Write a new post' id='postInput'
+                             ref={postRef}>
+
+                             </textarea>
                         </div>
                         <div className="buttonArea">
                             <button onClick={()=>{addPost()}}>Add Post</button>
