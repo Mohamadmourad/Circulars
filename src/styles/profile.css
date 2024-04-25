@@ -112,6 +112,23 @@ h2 {
   width: 30px;
 }
 
+.profileHeader button{
+  background-color: transparent;
+}
+
+.profileHeader button:hover{
+  transform: scale(1.2);
+}
+
+.profileHeader img{
+  width: 20px;
+}
+
+.profileHeader{
+  display: flex;
+  align-items: center;
+}
+
 @media all and (max-width: 900px) {
   .profileTop {
     height: 350px;

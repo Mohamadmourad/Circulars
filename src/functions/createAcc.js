@@ -12,8 +12,7 @@ const createAcc = async (email, pass,username) => {
         userId: auth.currentUser.uid,
         username: username,
         photoLink: randomImg(),
-        name:'',
-        lastName:''
+        bio: "Circulars users"
       })
 
   }

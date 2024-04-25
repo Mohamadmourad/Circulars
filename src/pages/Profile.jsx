@@ -11,6 +11,7 @@ import getFollowingCount from "../functions/getFollowingCount";
 import exitImg from "../images/assets/exit.svg";
 import ProfilePost from "../components/ProfilePost";
 import loadProfilePost from "../functions/loadProfilePost";
+import edit from "../images/assets/edit.svg";
 
 const Profile = () => {
   const [isMyAcc, setIsMyAcc] = useState(true);
@@ -43,8 +44,8 @@ const Profile = () => {
 
   useEffect(() => {
     const getInfo = async () => {
-      setFollowersCount(await getFollowerCount(userId));
-      setFollowingCount(await getFollowingCount(userId));
+      setFollowingCount(await getFollowerCount(userId));
+      setFollowersCount(await getFollowingCount(userId));
       setPostList(await loadProfilePost(userId));
 
       if (userId !== auth?.currentUser?.uid) {
@@ -78,13 +79,13 @@ const Profile = () => {
             <div className="profileImg"><img src={pfp} alt="pfp" /></div>
           
           <div className="profileInfo">
-            <span>{info.username}</span>
+            <span className="profileHeader">
+                {info.username} 
+                <button><img src={edit}></img></button>
+              </span>
             <div className="bioArea">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-          similique earum dolorum distinctio dolore? Magnam cupiditate
-          aspernatur quisquam ratione ipsam dolor esse, et maiores, cum hic illo
-          commodi. Dolorem, repellendus.
+          {info.bio}
         </p>
       </div>
           </div>
