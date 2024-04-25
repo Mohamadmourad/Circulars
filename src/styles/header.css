@@ -93,6 +93,8 @@ header img{
 
     header{
         padding: 0;
+        align-items: center;
+        justify-content: center;
     }
     .btnContainer a{
         width: 68px;

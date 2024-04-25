@@ -1,106 +1,167 @@
-.profileTop{
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 90px;
+.profileTop {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 90px;
 }
 
-.profileTop img{
-    width: 150px;
-    border-radius: 100%;
+.profileTopLeft img {
+  width: 150px;
+  max-width: 250px;
+  height: 150px;
+  max-height: 250px;
+  border-radius: 100%;
 }
 
-.profileTopLeft{
-    display: flex;
-    gap: 30px;
+.profileTopLeft {
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
 }
 
-.profileTopLeft span{
-    margin-top: 20px;
+.profileTopLeft span {
+  margin-top: 20px;
 }
 
-.profileInfo{
-    display: flex;
-    flex-direction: column;
+.profileInfo {
+  display: flex;
+  flex-direction: column;
 }
 
-.profileInfo span{
-    font-weight: bold;
-    font-size: 18px;
+.profileInfo span {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.bio{
-    width: 40%;
+.bioArea {
+  width: 60%;
 }
 
-.followersArea{
-    display: flex;
-    gap: 70px;
-    font-size: 24px;
-    font-weight: bold;
+.followersArea {
+  display: flex;
+  gap: 70px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.following ,.followers{
-    height: 110px;
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.following,
+.followers {
+  height: 110px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.followBtn{
-    display: flex;
-    justify-content: end;
-    padding-right: 80px;
+.followBtn {
+  display: flex;
+  justify-content: end;
+  padding-right: 80px;
 }
 
-
-.followBtn button:hover{
-    transform: scale(0.9);
+.followBtn button:hover {
+  transform: scale(0.9);
 }
 
-.postArea{
-    border: solid;
+.postArea {
+  border-bottom: 1px solid #ce2d4f;
+}
+.postsHead {
+  border-bottom: 3px solid black;
 }
 
-h2{
-    text-align: center;
+h2 {
+  text-align: center;
 }
 
 .followBtnElementUnfollow {
-    background: none;
-    border: solid #ce2d4f;
-    width: 70px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    transition: all 0.2s;
-    color: #ce2d4f;
-    cursor: pointer;
+  background: none;
+  border: solid #ce2d4f;
+  width: 70px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.2s;
+  color: #ce2d4f;
+  cursor: pointer;
 }
 
-.followBtnElement{
-    background-color: #ce2d4f;
-    width: 70px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    transition: all 0.2s;
-    color: #F5F5F5;
-    cursor: pointer;
+.followBtnElement {
+  background-color: #ce2d4f;
+  width: 70px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.2s;
+  color: #f5f5f5;
+  cursor: pointer;
 }
 
-.exitButton{
-    background-color: transparent;
+.exitButton {
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.exitButton img {
+  width: 30px;
+}
+
+@media all and (max-width: 900px) {
+  .profileTop {
+    height: 350px;
+    flex-direction: column;
+    padding: 0 90px;
+  }
+
+  .profileTopLeft {
+    gap: 10px;
+  }
+
+  .profileTopLeft img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileInfo {
     margin-top: 20px;
-}
+  }
 
-.exitButton img{
-    width: 30px;
+  .bioArea {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    padding: 0 30px;
+  }
+
+  .followersArea {
+    gap: 20px;
+  }
+
+  .followBtn {
+    padding: 20px;
+  }
+
+  .followBtnElement {
+    width: 70px;
+    height: 35px;
+  }
+
+  .followBtnElementUnfollow {
+    width: 70px;
+    height: 35px;
+  }
+
+  .exitButton {
+    margin-top: 10px;
+  }
+
+  .exitButton img {
+    width: 20px;
+  }
 }

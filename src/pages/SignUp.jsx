@@ -65,7 +65,7 @@ const SignUp = () => {
 
                         <div className="buttonArea">
                             <span>Have an account? <Link to="/Login" >Login</Link></span>
-                            <button onClick={()=>{onSubmit()}}> Next</button>
+                            <button onClick={()=>{onSubmit()}}> Signup</button>
                         </div>
                     </div>
                 </div>
