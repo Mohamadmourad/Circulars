@@ -1,5 +1,7 @@
 import "../styles/post.css";
 import { Link } from "react-router-dom";
+import LikeButton from "./LikeButton";
+import commentImg from "../images/assets/comment.svg"
 
 const Post = ({username,content,photoLink,userId}) => {
    let photoUrl = require(`../images/profile/${photoLink}`);
@@ -15,6 +17,10 @@ const Post = ({username,content,photoLink,userId}) => {
             { content }
           </p>
         </div>
+      </div>
+      <div className="interactions">
+      <LikeButton />
+      <img src={commentImg}></img>
       </div>
     </div>
   );

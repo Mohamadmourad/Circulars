@@ -1,12 +1,10 @@
 .Post{
-    
     width: 90%;
     padding: 15px;
     max-width: 1200px;
     margin: 50px auto;
     box-shadow: 8px 12px 10px -9px #364F6B;
     border-radius: 10px;
-    
 }
 
 .posts{
@@ -39,4 +37,23 @@
 .postContent p{
  text-align: justify;
  margin-left: 10px;
+}
+
+.LikeButton button{
+    background-color: transparent;
+    width: 100px;
+    display: flex;
+    justify-content: start;
+}
+
+.LikeButton img{
+    width: 25px;
+}
+
+.interactions{
+    display: flex;
+}
+
+.interactions img{
+    width: 25px;
 }

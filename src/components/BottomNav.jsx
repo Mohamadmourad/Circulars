@@ -37,13 +37,13 @@ const BottomNav = () => {
   },[info.photoLink,isLogedIn]);
     return (
         <div className="BottomNav">
-            <nav>
+            {userId ?<nav>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/createPost'}>Add Post</NavLink>
                 <Link to={`/profile/${userId}`}>
                 <img src={ pfp } alt="pfpImg" />
               </Link>
-            </nav>
+            </nav> : <div></div>}
         </div>
     );
 }

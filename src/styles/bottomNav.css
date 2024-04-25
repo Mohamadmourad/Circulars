@@ -2,7 +2,6 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #364F6B;
     height: 60px;
     display: none;
 }
@@ -12,6 +11,8 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    background-color: #364F6B;
+    height: 100%;
 }
 
 .BottomNav img{
