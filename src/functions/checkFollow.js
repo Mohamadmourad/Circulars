@@ -1,7 +1,6 @@
 import { getDocs,collection,query,where } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { useState } from "react";
-import { auth } from "../config/firebase";
+
 
 const checkFollow = async (followerId,followingId)=>{
     try{

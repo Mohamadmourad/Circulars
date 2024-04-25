@@ -6,7 +6,6 @@ import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import CreateProfile from "./components/CreateProfile.jsx";
 import checkFollow from "./functions/checkFollow.js";
-import loadPost from "./functions/loadPost.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

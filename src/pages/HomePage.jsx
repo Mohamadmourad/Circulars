@@ -32,6 +32,8 @@ const HomePage = () => {
               username={post.username}
               content={post.content}
               photoLink={post.photoLink}
+              isLiked = {post.isLiked}
+              postId = {post.postId}
             />
           ))
         }

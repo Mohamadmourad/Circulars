@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
 import commentImg from "../images/assets/comment.svg"
 
-const Post = ({username,content,photoLink,userId}) => {
+const Post = ({username,content,photoLink,userId,isLiked,postId}) => {
    let photoUrl = require(`../images/profile/${photoLink}`);
   return (
     <div className="Post">
@@ -19,7 +19,7 @@ const Post = ({username,content,photoLink,userId}) => {
         </div>
       </div>
       <div className="interactions">
-      <LikeButton />
+      <LikeButton isLiked={isLiked} userId={userId} postId={postId}/>
       <img src={commentImg}></img>
       </div>
     </div>

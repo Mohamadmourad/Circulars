@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import likeFilled from "../images/assets/heart-fill.svg";
 import like from "../images/assets/heart.svg";
+import addLike from "../functions/addLike"
+import removeLike from "../functions/removeLike"
 
-const LikeButton = () => {
+const LikeButton = ({isLiked,userId,postId}) => {
     const [status,setStatus] = useState(false); //true if liked
+    useEffect(()=>{
+        setStatus(isLiked);
+    },[])
     const click = async()=>{
         setStatus(privious => !privious);
 
-        if(status){
-
+        if(!status){
+          addLike(userId,postId);
         }
         else{
-
+          removeLike(userId,postId);
         }
     }
 

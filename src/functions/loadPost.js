@@ -1,6 +1,7 @@
 import { db } from "../config/firebase";
 import { getDocs, collection, orderBy } from "firebase/firestore";
 import loadProfileData from "./loadProfileData";
+import checkLiked from "./checkLiked";
 
 const loadPost = async () => {
   let result = [];
@@ -16,7 +17,9 @@ const loadPost = async () => {
       content: post,
       userId: user,
       username: userData.username,
-      photoLink: userData.photoLink
+      photoLink: userData.photoLink,
+      isLiked: await checkLiked(user,doc.id),
+      postId : doc.id
     });
   }));
 

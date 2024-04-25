@@ -36,6 +36,7 @@ const Header = () => {
     getData();
   },[info.photoLink,isLogedIn]);
 
+
   return (
     <header>
       <a>
