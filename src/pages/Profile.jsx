@@ -33,6 +33,14 @@ const Profile = () => {
     navigate(-1);
   };
 
+  const increseFollowerCount = ()=>{
+    setFollowersCount(previous => previous+1);
+  }
+
+  const decreseFollowerCount = ()=>{
+    setFollowersCount(previous => previous-1);
+  }
+
   useEffect(() => {
     const getInfo = async () => {
       setFollowersCount(await getFollowerCount(userId));
@@ -85,18 +93,21 @@ const Profile = () => {
         <div className="followersArea">
           <div className="following">
             <span>Following</span>
-            <span>{followersCount}</span>
+            <span>{followingCount}</span>
           </div>
           <div className="followers">
             <span>Followers</span>
-            <span>{followingCount}</span>
+            <span>{followersCount}</span>
           </div>
         </div>
       </div>
       <div className="followBtn">
         {" "}
         {/*follow button area */}
-        {!isMyAcc && <FollowBtn followingId={userId} />}
+        {!isMyAcc && <FollowBtn
+         followingId={userId} 
+         decreseFollowerCount = {decreseFollowerCount}
+         increseFollowerCount = {increseFollowerCount}/>}
         {isMyAcc && (
           <button
             onClick={() => {

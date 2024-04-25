@@ -6,7 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 
-const FollowBtn = ({followingId}) => {
+const FollowBtn = ({followingId,increseFollowerCount,decreseFollowerCount}) => {
     const [follows,setFollows] = useState(false);
     let followerId = '';
 
@@ -36,9 +36,11 @@ const FollowBtn = ({followingId}) => {
 
          if(follows == false){  // he followed
          await addFollower(await getCurrentUser(),followingId);
+         increseFollowerCount();
          }
         else{  // he unfollowed
           await removeFollower(await getCurrentUser(),followingId);
+          decreseFollowerCount();
          }
     }
 

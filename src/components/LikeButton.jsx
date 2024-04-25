@@ -4,7 +4,7 @@ import like from "../images/assets/heart.svg";
 import addLike from "../functions/addLike"
 import removeLike from "../functions/removeLike"
 
-const LikeButton = ({isLiked,userId,postId}) => {
+const LikeButton = ({isLiked,userId,postId,addLikeCount,removeLikeCount}) => {
     const [status,setStatus] = useState(false); //true if liked
     useEffect(()=>{
         setStatus(isLiked);
@@ -14,9 +14,11 @@ const LikeButton = ({isLiked,userId,postId}) => {
 
         if(!status){
           addLike(userId,postId);
+          addLikeCount();
         }
         else{
           removeLike(userId,postId);
+          removeLikeCount();
         }
     }
 

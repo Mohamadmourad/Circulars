@@ -34,6 +34,7 @@ const HomePage = () => {
               photoLink={post.photoLink}
               isLiked = {post.isLiked}
               postId = {post.postId}
+              likeCount = {post.likeCount}
             />
           ))
         }

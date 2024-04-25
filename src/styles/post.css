@@ -31,9 +31,7 @@
     margin: 10px 0;
     
 }
-.postContent{
 
-}
 .postContent p{
  text-align: justify;
  margin-left: 10px;
@@ -41,7 +39,7 @@
 
 .LikeButton button{
     background-color: transparent;
-    width: 100px;
+    width: 40px;
     display: flex;
     justify-content: start;
 }
@@ -52,8 +50,20 @@
 
 .interactions{
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .interactions img{
     width: 25px;
+}
+
+.likeArea{
+    display: flex;
+    align-items: center;
+}
+
+.likeArea span{
+  font-weight: bold;
+  color: #CE2D4F;
 }
