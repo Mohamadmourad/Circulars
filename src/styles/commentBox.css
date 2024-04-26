@@ -1,0 +1,50 @@
+.CommentBox {
+}
+.Commentsbox {
+  display: block;
+  position: fixed;
+  gap: 15px;
+  width: 350px;
+  max-width: 60%;
+  height: 150px;
+  max-height: 150px;
+  padding: 5px;
+  overflow-y: scroll;
+}
+.submitComment {
+  display: flex;
+  position: fixed;
+  bottom: 1;
+  justify-content: left;
+  gap: 10px;
+  align-items: center;
+}
+.addComment {
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #3fc1c9;
+}
+.commentButton {
+  width: 50px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.2s;
+  user-select: none;
+  background-color: #3fc1c9;
+}
+.commentButton:hover {
+  transform: scale(0.9);
+}
+.exitButton {
+  margin-top: 10px;
+}
+
+.exitButton img {
+  width: 20px;
+}
