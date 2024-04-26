@@ -185,4 +185,18 @@ h2 {
   .profileHeader img{
     width: 20px;
   }
+  .followBtn {
+    margin-top : 20px;
+    justify-content: center;
+    
+  }
+  .followBtnElementUnfollow {
+    width: 70px;
+    height: 40px;
+  }
+  
+  .followBtnElement {
+    width: 70px;
+    height: 40px;
+  }
 }
