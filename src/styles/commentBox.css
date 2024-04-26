@@ -4,23 +4,26 @@
   left: 50%;
 }
 .Commentsbox {
-  background-color: #364F6B;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   position: fixed;
   gap: 15px;
   width: 350px;
   max-width: 60%;
-  height: 150px;
-  max-height: 150px;
+  height: 220px;
   padding: 5px;
   align-items: center;
+}
+.comments{
   overflow-y: scroll;
+  background-color: #364F6B;
+  border-radius: 15px;
+  height: 180px;
 }
 .submitComment {
   display: flex;
-  position: fixed;
-  top: 52.8%;
   justify-content: left;
   gap: 10px;
   align-items: center;

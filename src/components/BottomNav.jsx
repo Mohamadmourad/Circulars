@@ -1,6 +1,5 @@
 import "../styles/bottomNav.css"
 import { Link,NavLink } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import loadProfileData from "../functions/loadProfileData";
 import { useState, useEffect } from "react";

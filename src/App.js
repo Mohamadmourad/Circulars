@@ -4,7 +4,6 @@ import CreatePost from './pages/CreatePost.jsx';
 import Profile from './pages/Profile.jsx';
 import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
-import CreateProfile from "./components/CreateProfile.jsx";
 import checkFollow from "./functions/checkFollow.js";
 
 const router = createBrowserRouter(
@@ -17,7 +16,6 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/Login" element={<Login />} />
       <Route path="/SignUp" element={<SignUp />} />
-      <Route path="/CreateProfile" element={<CreateProfile />} />
     </Route>
   )
 )

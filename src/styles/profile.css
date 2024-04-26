@@ -181,4 +181,8 @@ h2 {
   .exitButton img {
     width: 20px;
   }
+
+  .profileHeader img{
+    width: 20px;
+  }
 }
