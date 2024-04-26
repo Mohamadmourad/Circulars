@@ -1,12 +1,18 @@
 import "../styles/commentBox.css";
 import Comment from "../components/Comment";
 import exitButton from "../images/assets/x.svg";
+
+function exitCommentBox() {
+  const commentBox = document.querySelector("#CommentBox");
+  commentBox.style.display = "none";
+
+}
 const CommentBox = () => {
   return (
-    <div className="CommentBox">
+    <div className="CommentBox" id="CommentBox">
       <div className="exit">
-        <button className="exitButton">
-          <img src={exitButton} alt="exit" className="exitIcon" />
+        <button className="exitButton" onClick={() =>{exitCommentBox()}}>
+          <img src={exitButton} alt="exit" />
         </button>
       </div>
       <div className="Commentsbox">

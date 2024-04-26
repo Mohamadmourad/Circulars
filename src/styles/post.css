@@ -67,3 +67,9 @@
   font-weight: bold;
   color: #CE2D4F;
 }
+.commentArea button{
+    background-color: transparent;
+    width: 40px;
+    display: flex;
+    justify-content: start;
+}

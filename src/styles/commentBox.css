@@ -1,7 +1,14 @@
-.CommentBox {
+#CommentBox {
+  display: none;
+  position: fixed;
+  margin: 0 auto;
+  width: 50;
+  margin: auto;
 }
 .Commentsbox {
-  display: block;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
   position: fixed;
   gap: 15px;
   width: 350px;
@@ -14,7 +21,8 @@
 .submitComment {
   display: flex;
   position: fixed;
-  bottom: 1;
+  top: 50%;
+  
   justify-content: left;
   gap: 10px;
   align-items: center;
@@ -42,9 +50,13 @@
   transform: scale(0.9);
 }
 .exitButton {
+  background-color: transparent;
+  display: flex;
   margin-top: 10px;
 }
 
 .exitButton img {
+  
+  background-color: transparent;
   width: 20px;
 }
