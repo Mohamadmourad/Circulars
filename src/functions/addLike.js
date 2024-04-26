@@ -1,11 +1,11 @@
-import { db } from "../config/firebase";
+import { db,auth } from "../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
 const addLike = async (userId,postId)=>{
     try{
     let likeCollection = collection(db,"like");
     addDoc(likeCollection,{
-      userId: userId,
+      userId: auth?.currentUser?.uid,
       postId: postId
     });
     }
