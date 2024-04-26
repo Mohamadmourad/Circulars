@@ -32,7 +32,6 @@ const ProfilePost = ({ content,userId,postId,isLiked,likeCount}) => {
          removeLikeCount = {removeLikeCount}/>
          <span>{likes}</span>
       </div>
-        <img src={commentImg}></img>
       </div>
     </div>
   );

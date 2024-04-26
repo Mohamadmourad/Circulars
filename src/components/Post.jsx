@@ -1,14 +1,8 @@
 import "../styles/post.css";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
-import commentImg from "../images/assets/comment.svg";
 import { useEffect, useState } from "react";
-import CommentBox from "../components/CommentBox.jsx";
-function displayCommentBox() {
-  const commentBox = document.querySelector("#CommentBox");
-  commentBox.style.display = "block";
 
-}
 
 const Post = ({
   username,
@@ -53,13 +47,7 @@ const Post = ({
           />
           <span>{likes}</span>
         </div>
-        <div className="commentArea">
-          <button onClick={() => {displayCommentBox()}}>
-            <img src={commentImg}></img>
-          </button>
-        </div>
       </div>
-      <CommentBox />
     </div>
     
   );

@@ -10,7 +10,6 @@ const getLikeCount = async (postId)=>{
 
   queryRes.forEach((like)=>{
     count++;
-    console.log(like.data())
   })
   
   return count;

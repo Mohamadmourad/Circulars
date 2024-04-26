@@ -130,7 +130,8 @@ const Profile = () => {
           content={post.content} 
           isLiked={post.isLiked}
           likeCount={post.likeCount}
-          postId = {post.postId}/>
+          postId = {post.postId}
+          key={post.postId}/>
         ))}
       </div>
     </div>
