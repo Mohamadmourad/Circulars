@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Post from "../components/Post";
 import loadPost from "../functions/loadPost";
 import { useState, useEffect } from "react";
-
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
 
@@ -38,6 +37,7 @@ const HomePage = () => {
           ))
         }
       </div>
+      
       <BottomNav />
     </div>
   );
