@@ -127,7 +127,7 @@ h2 {
   align-items: center;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 750px) {
   .profileHeader {
     flex-direction: column;
     justify-content: center;
