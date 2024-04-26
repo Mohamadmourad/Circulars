@@ -126,7 +126,11 @@ const Profile = () => {
 
       <div className="postArea">
         {postList.map((post) => (
-          <ProfilePost content={post.content} myAccount={isMyAcc} />
+          <ProfilePost 
+          content={post.content} 
+          isLiked={post.isLiked}
+          likeCount={post.likeCount}
+          postId = {post.postId}/>
         ))}
       </div>
     </div>
