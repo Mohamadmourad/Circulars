@@ -5,10 +5,12 @@ import { db,auth } from '../config/firebase';
 import { addDoc,collection } from 'firebase/firestore';
 import Header from '../components/Header';
 import BottomNav from '../components/BottomNav';
+import firebase from 'firebase/compat/app';
+import { Timestamp } from 'firebase/compat/firestore';
 
 const CreatePost = () => {
     const postRef = useRef(null);
-
+    let timeNow = firebase.firestore.Timestamp.now();
     const navigate = useNavigate();
 
     const addPost = async ()=>{
@@ -18,6 +20,7 @@ const CreatePost = () => {
         await addDoc(postCollection,{
             userId: auth.currentUser.uid,
             content: post,
+            time : timeNow
         });
         navigate('/');
      }

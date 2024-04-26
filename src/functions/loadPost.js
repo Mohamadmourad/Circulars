@@ -1,5 +1,5 @@
 import { db } from "../config/firebase";
-import { getDocs, collection, orderBy } from "firebase/firestore";
+import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import loadProfileData from "./loadProfileData";
 import checkLiked from "./checkLiked";
 import getLikeCount from "./getLikeCount";
@@ -7,8 +7,8 @@ import getLikeCount from "./getLikeCount";
 const loadPost = async () => {
   let result = [];
   let postCollection = collection(db, "post");
-
-  let data = await getDocs(postCollection);
+  let q = query(postCollection,orderBy("time","desc"))
+  let data = await getDocs(q);
 
   await Promise.all(data.docs.map(async (doc) => {
     let user = doc.data().userId;

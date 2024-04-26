@@ -1,5 +1,5 @@
 import { db } from "../config/firebase";
-import { getDocs, collection, where ,query } from "firebase/firestore";
+import { getDocs, collection, where ,query} from "firebase/firestore";
 import checkLiked from "./checkLiked";
 import getLikeCount from "./getLikeCount";
 

@@ -12,7 +12,6 @@ const HomePage = () => {
       try {
         const data = await loadPost();
         setPosts(data);
-        console.log(posts);
       } catch (e) {
         console.error(e);
       } 
