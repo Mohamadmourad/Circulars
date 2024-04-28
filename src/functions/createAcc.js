@@ -22,7 +22,7 @@ const createAcc = async (email, pass,username) => {
 }
 
 const randomImg = ()=>{
-  return `${Math.floor(Math.random() * 10)+1}.png`
+  return `${Math.floor(Math.random() * 11)+1}.png`
 }
 
 export default createAcc;
