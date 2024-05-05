@@ -1,7 +1,7 @@
 import "../styles/post.css";
 import LikeButton from "./LikeButton";
-import commentImg from "../images/assets/comment.svg"
 import { useEffect, useState } from "react";
+import DeletePost from "./DeletePost";
 
 const ProfilePost = ({ content,userId,postId,isLiked,likeCount,time}) => {
   const [likes,setLikes] = useState(0);
@@ -32,7 +32,7 @@ const ProfilePost = ({ content,userId,postId,isLiked,likeCount,time}) => {
          removeLikeCount = {removeLikeCount}/>
          <span>{likes}</span>
       </div>
-      <aside className="time">{time}</aside>
+      <aside className="time">{time} <DeletePost /></aside>
       </div>
     </div>
   );

@@ -1,81 +1,86 @@
-.Post{
-    width: 90%;
-    padding: 15px;
-    max-width: 1200px;
-    margin: 50px auto;
-    box-shadow: 8px 12px 10px -9px #364F6B;
-    border-radius: 10px;
+.Post {
+  width: 90%;
+  padding: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
+  box-shadow: 8px 12px 10px -9px #364f6b;
+  border-radius: 10px;
 }
 
-.posts{
-    margin-top: 100px;
-}
-.postHeader{
-    display: flex;
-    font-size: 14px;
-    gap: 5px;
-    color: #362624;
-    user-select: none;
-}
-.postHeader img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition:transform 0.2s ease, border 0.01s ease;
-    border: #3FC1C9 solid 2px;
-}
-.postBorder{
-
-    border-left: 3px solid #3FC1C9;
-    margin: 10px 0;
-    
+.posts {
+  margin-top: 100px;
 }
 
-.postContent p{
- text-align: justify;
- margin-left: 10px;
+.postHeader {
+  display: flex;
+  font-size: 14px;
+  gap: 5px;
+  color: #362624;
+  user-select: none;
+}
+.postHeader img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.01s ease;
+  border: #3fc1c9 solid 2px;
+}
+.postBorder {
+  border-left: 3px solid #3fc1c9;
+  margin: 10px 0;
 }
 
-.LikeButton button{
-    background-color: transparent;
-    width: 40px;
-    display: flex;
-    justify-content: start;
+.postContent p {
+  width: 70%;
+  max-width: 80%;
+  text-align: justify;
+  margin-left: 10px;
 }
 
-.LikeButton img{
-    width: 25px;
+.LikeButton button {
+  background-color: transparent;
+  width: 40px;
+  display: flex;
+  justify-content: start;
 }
 
-.interactions{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+.LikeButton img {
+  width: 25px;
 }
 
-.interactions img{
-    width: 25px;
+.interactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.likeArea{
-    display: flex;
-    align-items: center;
+.interactions img {
+  width: 25px;
 }
 
-.likeArea span{
+.likeArea {
+  display: flex;
+  align-items: center;
+}
+
+.likeArea span {
   font-weight: bold;
-  color: #CE2D4F;
+  color: #ce2d4f;
 }
-.commentArea button{
-    background-color: transparent;
-    width: 40px;
-    display: flex;
-    justify-content: start;
+.commentArea button {
+  background-color: transparent;
+  width: 40px;
+  display: flex;
+  justify-content: start;
 }
 
-.time{
-    font-size: 12px;
-    color: grey;
+.time {
+  font-size: 12px;
+  color: grey;
+}
+.DeletePost button {
+  width: 50px;
+  margin: 10px 0 0 0;
 }

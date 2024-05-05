@@ -1,9 +1,10 @@
 import BottomNav from "../components/BottomNav";
 import Header from "../components/Header";
+import Loader from "../components/Loader";
 import Post from "../components/Post";
 import loadPost from "../functions/loadPost";
 import { useState, useEffect } from "react";
-import ReactLoading from 'react-loading';
+
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -17,7 +18,7 @@ const HomePage = () => {
         setLoading(false);
       } catch (e) {
         console.error(e);
-      } 
+      }
     };
     getData();
   }, []);
@@ -34,20 +35,19 @@ const HomePage = () => {
               username={post.username}
               content={post.content}
               photoLink={post.photoLink}
-              isLiked = {post.isLiked}
-              postId = {post.postId}
-              likeCount = {post.likeCount}
-              time = {post.time}
+              isLiked={post.isLiked}
+              postId={post.postId}
+              likeCount={post.likeCount}
+              time={post.time}
             />
-          ))
-        }
-        {loading &&
+          ))}
+        {loading && (
           <div className="loading">
-            <ReactLoading type={"bubbles"} color={"#3Fc1C9"} height={100} width={100} />
+            <Loader />
           </div>
-        }
+        )}
       </div>
-      
+
       <BottomNav />
     </div>
   );

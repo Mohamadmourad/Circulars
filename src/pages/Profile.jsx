@@ -12,10 +12,10 @@ import exitImg from "../images/assets/exit.svg";
 import ProfilePost from "../components/ProfilePost";
 import loadProfilePost from "../functions/loadProfilePost";
 import edit from "../images/assets/edit.svg";
-import ReactLoading from 'react-loading';
+import Loader from "../components/Loader";
 
 const Profile = () => {
-  const [isMyAcc, setIsMyAcc] = useState(true);
+  const [isMyAcc, setIsMyAcc] = useState(false);
   const [info, setInfo] = useState({});
   const [followersCount, setFollowersCount] = useState(5);
   const [followingCount, setFollowingCount] = useState(5);
@@ -50,8 +50,8 @@ const Profile = () => {
       setFollowersCount(await getFollowingCount(userId));
       setPostList(await loadProfilePost(userId));
       setLoading(false);
-      if (userId !== auth?.currentUser?.uid) {
-        setIsMyAcc(false);  // to check if its my acc
+      if (userId == auth?.currentUser?.uid) {
+        setIsMyAcc(true);  // to check if its my acc
       }
 
       const profileData = await loadProfileData(userId); // Load profile data
@@ -106,11 +106,11 @@ const Profile = () => {
       <div className="followBtn">
         {" "}
         {/*follow button area */}
-        {!isMyAcc && <FollowBtn
+        {!isMyAcc && !loading && <FollowBtn
          followingId={userId} 
          decreseFollowerCount = {decreseFollowerCount}
          increseFollowerCount = {increseFollowerCount}/>}
-        {isMyAcc && (
+        {isMyAcc && !loading && (
           <button
             onClick={() => {
               logout();
@@ -140,7 +140,7 @@ const Profile = () => {
         {
           loading && 
           <div className="loadingProfile">
-            <ReactLoading type={"bubbles"} color={"#3Fc1C9"} height={100} width={100} />
+            <Loader />
           </div>
         }
       </div>
