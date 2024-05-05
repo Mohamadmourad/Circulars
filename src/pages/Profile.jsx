@@ -133,6 +133,7 @@ const Profile = () => {
           isLiked={post.isLiked}
           likeCount={post.likeCount}
           postId = {post.postId}
+          time = {post.time}
           key={post.postId}/>
         ))
         }
