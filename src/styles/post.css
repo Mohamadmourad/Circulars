@@ -51,6 +51,7 @@
 .interactions{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -72,4 +73,9 @@
     width: 40px;
     display: flex;
     justify-content: start;
+}
+
+.time{
+    font-size: 12px;
+    color: grey;
 }

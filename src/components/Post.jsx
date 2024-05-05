@@ -12,6 +12,7 @@ const Post = ({
   isLiked,
   postId,
   likeCount,
+  time,
 }) => {
   let photoUrl = require(`../images/profile/${photoLink}`);
   let [likes, setLikes] = useState(0);
@@ -47,6 +48,7 @@ const Post = ({
           />
           <span>{likes}</span>
         </div>
+        <aside className="time">{time}</aside>
       </div>
     </div>
     

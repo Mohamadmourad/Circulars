@@ -15,6 +15,9 @@ const loadPost = async () => {
   for (const doc of posts.docs) {
     const user = doc.data().userId;
     const post = doc.data().content;
+    let postDate = doc.data().time.toDate().toString();
+    const dateObject = new Date(postDate);
+    const formattedDate = `${dateObject.getDate()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
 
     const userData = await loadProfileData(user);
     const isLiked = await checkLiked(user, doc.id);
@@ -27,7 +30,8 @@ const loadPost = async () => {
         photoLink: userData.photoLink,
         isLiked,
         likeCount,
-        postId: doc.id
+        postId: doc.id,
+        time: formattedDate,
     });
 }
 
