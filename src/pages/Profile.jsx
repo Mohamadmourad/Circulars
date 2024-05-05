@@ -12,6 +12,7 @@ import exitImg from "../images/assets/exit.svg";
 import ProfilePost from "../components/ProfilePost";
 import loadProfilePost from "../functions/loadProfilePost";
 import edit from "../images/assets/edit.svg";
+import ReactLoading from 'react-loading';
 
 const Profile = () => {
   const [isMyAcc, setIsMyAcc] = useState(true);
@@ -20,6 +21,7 @@ const Profile = () => {
   const [followingCount, setFollowingCount] = useState(5);
   const [pfp, setPfp] = useState(require(`../images/profile/loading.png`));
   const [postList, setPostList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { userId } = useParams();
 
@@ -47,10 +49,9 @@ const Profile = () => {
       setFollowingCount(await getFollowerCount(userId));
       setFollowersCount(await getFollowingCount(userId));
       setPostList(await loadProfilePost(userId));
-
+      setLoading(false);
       if (userId !== auth?.currentUser?.uid) {
-        // to check if its my acc
-        setIsMyAcc(false);
+        setIsMyAcc(false);  // to check if its my acc
       }
 
       const profileData = await loadProfileData(userId); // Load profile data
@@ -125,14 +126,22 @@ const Profile = () => {
       </div>
 
       <div className="postArea">
-        {postList.map((post) => (
+        {!loading  &&
+        postList.map((post) => (
           <ProfilePost 
           content={post.content} 
           isLiked={post.isLiked}
           likeCount={post.likeCount}
           postId = {post.postId}
           key={post.postId}/>
-        ))}
+        ))
+        }
+        {
+          loading && 
+          <div className="loadingProfile">
+            <ReactLoading type={"bubbles"} color={"#3Fc1C9"} height={100} width={100} />
+          </div>
+        }
       </div>
     </div>
   );

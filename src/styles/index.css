@@ -1,5 +1,5 @@
 body{
-  margin: 0;
+  margin: 70px 0 0 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
@@ -14,4 +14,17 @@ p{
 a{
   text-decoration: none;
   color: #F5F5F5;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loadingProfile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

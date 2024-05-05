@@ -3,14 +3,18 @@ import Header from "../components/Header";
 import Post from "../components/Post";
 import loadPost from "../functions/loadPost";
 import { useState, useEffect } from "react";
+import ReactLoading from 'react-loading';
+
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await loadPost();
         setPosts(data);
+        setLoading(false);
       } catch (e) {
         console.error(e);
       } 
@@ -22,7 +26,7 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       <div className="posts">
-        {
+        {!loading &&
           posts.map((post, index) => (
             <Post
               key={index}
@@ -35,6 +39,11 @@ const HomePage = () => {
               likeCount = {post.likeCount}
             />
           ))
+        }
+        {loading &&
+          <div className="loading">
+            <ReactLoading type={"bubbles"} color={"#3Fc1C9"} height={100} width={100} />
+          </div>
         }
       </div>
       
