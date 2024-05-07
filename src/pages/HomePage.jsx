@@ -26,7 +26,7 @@ const HomePage = () => {
     };
     getData();
   }, []);
-  console.log(isAdmin);
+
   return (
     <div className="HomePage">
       <Header />
@@ -52,7 +52,6 @@ const HomePage = () => {
           </div>
         )}
       </div>
-
       <BottomNav />
     </div>
   );

@@ -2,6 +2,7 @@ import "../styles/post.css";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
 import { useEffect, useState } from "react";
+import deletePost from "../functions/deletePost";
 
 
 const Post = ({
@@ -51,6 +52,9 @@ const Post = ({
         </div>
         <aside className="time">{time}</aside>
       </div>
+      {isAdmin && (
+            <button className="delete" onClick={()=>{deletePost(postId)}}>Delete</button>
+        )}
     </div>
     
   );
