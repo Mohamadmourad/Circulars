@@ -13,6 +13,7 @@ const Post = ({
   postId,
   likeCount,
   time,
+  isAdmin,
 }) => {
   let photoUrl = require(`../images/profile/${photoLink}`);
   let [likes, setLikes] = useState(0);

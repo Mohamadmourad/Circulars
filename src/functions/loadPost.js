@@ -3,6 +3,7 @@ import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import loadProfileData from "./loadProfileData";
 import checkLiked from "./checkLiked";
 import getLikeCount from "./getLikeCount";
+import checkIsAdmin from "./checkIsAdmin";
 
 const loadPost = async () => {
   let postCollection = collection(db, "post");
@@ -17,7 +18,7 @@ const loadPost = async () => {
     const post = doc.data().content;
     let postDate = doc.data().time.toDate().toString();
     const dateObject = new Date(postDate);
-    const formattedDate = `${dateObject.getDate()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
+    const formattedDate = `${dateObject.getDate()}/${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
 
     const userData = await loadProfileData(user);
     const isLiked = await checkLiked(user, doc.id);

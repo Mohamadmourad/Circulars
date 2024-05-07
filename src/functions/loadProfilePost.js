@@ -14,7 +14,7 @@ const loadProfilePost = async (userId) => {
       const postData = doc.data(); // Extract document data for clarity
       let postDate = doc.data().time.toDate().toString();
     const dateObject = new Date(postDate);
-    const formattedDate = `${dateObject.getDate()}-${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
+    const formattedDate = `${dateObject.getDate()}/${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
 
       result.push({
         content: postData.content,
