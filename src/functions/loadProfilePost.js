@@ -1,4 +1,4 @@
-import { db } from "../config/firebase";
+import { auth, db } from "../config/firebase";
 import { getDocs, collection, where, query, orderBy } from "firebase/firestore";
 import checkLiked from "./checkLiked";
 import getLikeCount from "./getLikeCount";
@@ -15,10 +15,10 @@ const loadProfilePost = async (userId) => {
       let postDate = doc.data().time.toDate().toString();
     const dateObject = new Date(postDate);
     const formattedDate = `${dateObject.getDate()}/${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
-
+    let currentUser = auth.currentUser.uid;
       result.push({
         content: postData.content,
-        isLiked: await checkLiked(userId, doc.id),
+        isLiked: await checkLiked(currentUser, doc.id),
         likeCount: await getLikeCount(doc.id),
         postId: doc.id,
         time: formattedDate,

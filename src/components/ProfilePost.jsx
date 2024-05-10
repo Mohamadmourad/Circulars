@@ -32,7 +32,7 @@ const ProfilePost = ({ content,userId,postId,isLiked,likeCount,time}) => {
          removeLikeCount = {removeLikeCount}/>
          <span>{likes}</span>
       </div>
-      <aside className="time">{time} <DeletePost /></aside>
+      <aside className="time">{time} </aside>
       </div>
     </div>
   );

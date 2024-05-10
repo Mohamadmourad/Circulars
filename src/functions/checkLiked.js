@@ -6,12 +6,14 @@ const checkLiked = async (userId,postId)=>{
   let likeCollection = collection(db,"like");
 
   let q = query(likeCollection,where("userId","==",userId),where("postId","==",postId));
-
   let data = await getDocs(q);
+  let count = 0;
 
-  let size = data.size;
+  data.forEach((doc)=>{
+    count++;
+  });
 
-  if(size > 0){
+  if(count > 0){
     return true;
   }
   else{

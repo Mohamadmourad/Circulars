@@ -53,7 +53,9 @@ const Post = ({
         <aside className="time">{time}</aside>
       </div>
       {isAdmin && (
-            <button className="delete" onClick={()=>{deletePost(postId)}}>Delete</button>
+            <div className="deleteArea">
+              <button className="delete" onClick={()=>{deletePost(postId)}}>Delete</button>
+            </div>
         )}
     </div>
     

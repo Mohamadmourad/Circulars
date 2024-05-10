@@ -18,7 +18,7 @@ const HomePage = () => {
       try {
         const data = await loadPost();
         setPosts(data);
-        setIsAdmin(await checkIsAdmin(auth.currentUser.uid));
+        setIsAdmin(await checkIsAdmin(auth.currentUser?.uid));
         setLoading(false);
       } catch (e) {
         console.error(e);

@@ -84,3 +84,13 @@
   width: 50px;
   margin: 10px 0 0 0;
 }
+
+.deleteArea{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.delete{
+  margin-top: 10px;
+}
