@@ -3,7 +3,7 @@ import { getAuth, EmailAuthCredential} from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB-xNO80WeT0Lg_JHfevwtcAkTptNVxBpo",
+  apiKey: "",
   authDomain: "circulars-30f73.firebaseapp.com",
   projectId: "circulars-30f73",
   storageBucket: "circulars-30f73.appspot.com",
