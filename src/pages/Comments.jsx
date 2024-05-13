@@ -43,7 +43,7 @@ const Comments = () => {
                     <Loader />
                 </div>
             ) : (
-                <>
+                <div>
                     <aside className="commentSection">
                         {comments.map((comment, index) => (
                             <CommentBox key={index} username={comment.username} content={comment.content} />
@@ -53,7 +53,7 @@ const Comments = () => {
                         <input type="text" placeholder="Add a comment" ref={commentRef} />
                         <button onClick={commentAddition}>Send</button>
                     </footer>
-                </>
+                </div>
             )}
         </div>
     );

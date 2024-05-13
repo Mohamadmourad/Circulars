@@ -6,7 +6,8 @@ import getLikeCount from "./getLikeCount";
 import checkIsAdmin from "./checkIsAdmin";
 
 const loadPost = async () => {
-  let postCollection = collection(db, "post");
+  try{
+    let postCollection = collection(db, "post");
 
   let q = query(postCollection, orderBy("time", "desc"));
 
@@ -39,6 +40,10 @@ const loadPost = async () => {
 }
 
 return results;
+  }
+  catch(e){
+    console.error(e);
+  }
 }
 
 export default loadPost;
