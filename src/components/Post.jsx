@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
 import { useEffect, useState } from "react";
 import deletePost from "../functions/deletePost";
+import commentBtn from "../images/assets/comment.svg";
 
 
 const Post = ({
@@ -49,6 +50,7 @@ const Post = ({
             removeLikeCount={removeLike}
           />
           <span>{likes}</span>
+          <Link to={`Comments/${postId}`}><img src={commentBtn} className="commentBtn"></img></Link>
         </div>
         <aside className="time">{time}</aside>
       </div>

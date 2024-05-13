@@ -11,10 +11,11 @@ const loadProfilePost = async (userId) => {
 
     const result = [];
     for (const doc of querySnapshot.docs) {
-      const postData = doc.data(); // Extract document data for clarity
+      const postData = doc.data(); 
       let postDate = doc.data().time.toDate().toString();
     const dateObject = new Date(postDate);
     const formattedDate = `${dateObject.getDate()}/${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
+    
     let currentUser = auth.currentUser.uid;
       result.push({
         content: postData.content,
