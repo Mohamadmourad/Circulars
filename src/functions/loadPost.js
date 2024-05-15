@@ -21,10 +21,15 @@ const loadPost = async () => {
     const dateObject = new Date(postDate);
     const formattedDate = `${dateObject.getDate()}/${String(dateObject.getMonth() + 1).padStart(2, '0')}   ${dateObject.getHours()}:${dateObject.getMinutes()}`;
 
-
-    let currentUser = auth.currentUser.uid;
+    let isLiked = false;
+    if(auth.currentUser?.uid?.length > 0 && auth.currentUser){
+      let currentUser = auth.currentUser.uid;
+       isLiked = await checkLiked(currentUser, doc.id);
+    }
+    else{
+       isLiked = false; 
+    }
     const userData = await loadProfileData(user);
-    const isLiked = await checkLiked(currentUser, doc.id);
     const likeCount = await getLikeCount(doc.id);
 
     results.push({

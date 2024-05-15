@@ -1,7 +1,7 @@
 import "../styles/profile.css";
 import { useState, useEffect } from "react";
 import loadProfileData from "../functions/loadProfileData";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -36,13 +36,13 @@ const Profile = () => {
     navigate(-1);
   };
 
-  const increseFollowerCount = ()=>{
-    setFollowersCount(previous => previous+1);
-  }
+  const increseFollowerCount = () => {
+    setFollowersCount((previous) => previous + 1);
+  };
 
-  const decreseFollowerCount = ()=>{
-    setFollowersCount(previous => previous-1);
-  }
+  const decreseFollowerCount = () => {
+    setFollowersCount((previous) => previous - 1);
+  };
 
   useEffect(() => {
     const getInfo = async () => {
@@ -51,7 +51,7 @@ const Profile = () => {
       setPostList(await loadProfilePost(userId));
       setLoading(false);
       if (userId == auth?.currentUser?.uid) {
-        setIsMyAcc(true);  // to check if its my acc
+        setIsMyAcc(true); // to check if its my acc
       }
 
       const profileData = await loadProfileData(userId); // Load profile data
@@ -77,20 +77,23 @@ const Profile = () => {
       </button>
       <div className="profileTop">
         <div className="profileTopLeft">
-            <div className="profileImg"><img src={pfp} alt="pfp" /></div>
-          
+          <div className="profileImg">
+            <img src={pfp} alt="pfp" />
+          </div>
+
           <div className="profileInfo">
             <span className="profileHeader">
-                {info.username} 
-                <button><img src={edit}></img></button>
-              </span>
+              {info.username}
+              {isMyAcc && <Link to={`/editProfile/${userId}`}>
+                <button>
+                  <img src={edit}></img>
+                </button>
+              </Link>}
+            </span>
             <div className="bioArea">
-        <p>
-          {info.bio}
-        </p>
-      </div>
+              <p>{info.bio}</p>
+            </div>
           </div>
-          
         </div>
         <div className="followersArea">
           <div className="following">
@@ -106,10 +109,13 @@ const Profile = () => {
       <div className="followBtn">
         {" "}
         {/*follow button area */}
-        {!isMyAcc && !loading && <FollowBtn
-         followingId={userId} 
-         decreseFollowerCount = {decreseFollowerCount}
-         increseFollowerCount = {increseFollowerCount}/>}
+        {!isMyAcc && !loading && (
+          <FollowBtn
+            followingId={userId}
+            decreseFollowerCount={decreseFollowerCount}
+            increseFollowerCount={increseFollowerCount}
+          />
+        )}
         {isMyAcc && !loading && (
           <button
             onClick={() => {
@@ -120,29 +126,28 @@ const Profile = () => {
           </button>
         )}
       </div>
-      
+
       <div className="postsHead">
         <h2>Posts</h2>
       </div>
 
       <div className="postArea">
-        {!loading  &&
-        postList.map((post) => (
-          <ProfilePost 
-          content={post.content} 
-          isLiked={post.isLiked}
-          likeCount={post.likeCount}
-          postId = {post.postId}
-          time = {post.time}
-          key={post.postId}/>
-        ))
-        }
-        {
-          loading && 
+        {!loading &&
+          postList.map((post) => (
+            <ProfilePost
+              content={post.content}
+              isLiked={post.isLiked}
+              likeCount={post.likeCount}
+              postId={post.postId}
+              time={post.time}
+              key={post.postId}
+            />
+          ))}
+        {loading && (
           <div className="loadingProfile">
             <Loader />
           </div>
-        }
+        )}
       </div>
     </div>
   );

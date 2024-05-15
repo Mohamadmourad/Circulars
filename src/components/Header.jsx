@@ -39,9 +39,9 @@ const Header = () => {
 
   return (
     <header>
-      <a>
+      <Link to="/">
         <img src={logo} />
-      </a>
+      </Link>
       <nav>
         {!isLogedIn && ( //if user is not loged in
           <div className="btnContainer">
