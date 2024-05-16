@@ -5,6 +5,8 @@ body{
   font-family: sans-serif;
   background-color: #F5F5F5;
   overflow-y: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p{

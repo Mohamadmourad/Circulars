@@ -6,7 +6,6 @@ import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import checkFollow from "./functions/checkFollow.js";
 import Comments from "./pages/Comments.jsx";
-import EditProfile from "./pages/EditProfile.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,9 +22,6 @@ const router = createBrowserRouter(
         <Route path=":postId" element={ <Comments />}/>
       </Route>
 
-      <Route path="/editProfile">
-        <Route path=":userId" element={ <EditProfile/>}/>
-      </Route>
 
     </Route>
   )

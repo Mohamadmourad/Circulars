@@ -14,6 +14,9 @@ const CreatePost = () => {
     const navigate = useNavigate();
 
     const addPost = async ()=>{
+        if(postRef.current.value.length === 0){
+            return;
+        }
      try{
         const post = postRef.current.value;
         let postCollection = collection(db,"post");

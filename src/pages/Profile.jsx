@@ -11,7 +11,6 @@ import getFollowingCount from "../functions/getFollowingCount";
 import exitImg from "../images/assets/exit.svg";
 import ProfilePost from "../components/ProfilePost";
 import loadProfilePost from "../functions/loadProfilePost";
-import edit from "../images/assets/edit.svg";
 import Loader from "../components/Loader";
 
 const Profile = () => {
@@ -84,15 +83,7 @@ const Profile = () => {
           <div className="profileInfo">
             <span className="profileHeader">
               {info.username}
-              {isMyAcc && <Link to={`/editProfile/${userId}`}>
-                <button>
-                  <img src={edit}></img>
-                </button>
-              </Link>}
             </span>
-            <div className="bioArea">
-              <p>{info.bio}</p>
-            </div>
           </div>
         </div>
         <div className="followersArea">

@@ -1,70 +1,106 @@
-.commentHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 0 20px;
-    border-bottom: solid;
+.commentHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  border-bottom: solid;
 }
 
-.commentHeader img{
-    position: absolute;
-    left: 0;
-    margin-left: 30px;
-    width: 30px;
-    cursor: pointer;
+.commentHeader img {
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
+  width: 30px;
+  cursor: pointer;
 }
 
-.commentSection{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 0 20px;
+.commentSection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 20px;
 }
 
-.CommentBox{
-    display: flex;
-    flex-direction: column;
-    border: solid;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 15px;
-    padding: 10px;
-    gap: 10px;
+.CommentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 1px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  padding: 10px;
+  gap: 10px;
 }
 
-.CommentBox span{
-    font-weight: bold;
+.CommentBox span {
+  font-weight: bold;
 }
 
 .addComment {
-    position: fixed;
-    bottom: 0;
-    z-index: 99;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 
-.addComment button{
-    background-color: #CE2D4F;
-    cursor: pointer;   
+.addComment button {
+  background-color: #ce2d4f;
+  cursor: pointer;
+  border: none;
+  
+}
+.addComment button:hover {
+  background-color: #ff4d6d;
+}
+.addComment button:active {
+  transform: scale(0.9);
 }
 
-.addComment input{
-    height: 40px;
-    width: 80%;
-    border-radius: 10px;
-    border: solid 1px;
+
+.addComment input {
+  height: 40px;
+  width: 80%;
+  border-radius: 10px;
+  border: solid 1px;
+  padding: 0 10px;
+  outline: none;
+}
+@media all and (max-width: 750px) {
+  .commentHeader img {
+    margin-left: 10px;
+  }
+  .commentHeader {
     padding: 0 10px;
-    outline: none;
-}
+  }
+  .CommentBox {
+    width: 100%;
+  }
+  .addComment {
+    gap: 10px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    white-space: nowrap;
+    width: 100%;
 
+    height: 20px;
+  
+  }
+  .addComment input {
+    width: 70%;
+  }
+}

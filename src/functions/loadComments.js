@@ -5,7 +5,7 @@ import loadProfileData from "./loadProfileData";
 const loadComments = async (postId)=>{
   let result = [];
   let c = collection(db, "comment");
-  let q = query(c,where("postId","==",postId));
+  let q = query(c,where("postId","==",postId));// add a clause to order comments
 
   let data = await getDocs(q);
   
