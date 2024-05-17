@@ -4,12 +4,16 @@ import like from "../images/assets/heart.svg";
 import addLike from "../functions/addLike"
 import removeLike from "../functions/removeLike"
 
-const LikeButton = ({isLiked,userId,postId,addLikeCount,removeLikeCount}) => {
+const LikeButton = ({isLiked,userId,postId,addLikeCount,removeLikeCount,isLogedIn}) => {
     const [status,setStatus] = useState(false); //true if liked
     useEffect(()=>{
         setStatus(isLiked);
     },[])
+
     const click = async()=>{
+      if(!isLogedIn){
+        return;
+      }
         setStatus(privious => !privious);
 
         if(!status){

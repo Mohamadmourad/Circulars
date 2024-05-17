@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Loader from "../components/Loader";
 import Post from "../components/Post";
 import { auth } from "../config/firebase";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
 import checkIsAdmin from "../functions/checkIsAdmin";
 import loadPost from "../functions/loadPost";
 import { useState, useEffect } from "react";
@@ -12,6 +13,17 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isLogedIn, setIsLogIn] = useState(false);
+
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setIsLogIn(true);
+    } else {
+      setIsLogIn(false);
+    }
+  });
 
   useEffect(() => {
     const getData = async () => {
@@ -44,6 +56,7 @@ const HomePage = () => {
               likeCount={post.likeCount}
               time={post.time}
               isAdmin = {isAdmin}
+              isLogedIn = {isLogedIn}
             />
           ))}
         {loading && (

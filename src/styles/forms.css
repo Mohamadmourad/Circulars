@@ -31,9 +31,10 @@
 .inputArea input {
   border-radius: 5px;
   border: none;
-  height: 25px;
+  height: 30px;
   padding-left: 5px;
   outline: none;
+  border-bottom: #ce2d4f 3px solid;
 }
 
 .inputChunk {

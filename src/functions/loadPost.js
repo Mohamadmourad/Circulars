@@ -3,7 +3,6 @@ import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import loadProfileData from "./loadProfileData";
 import checkLiked from "./checkLiked";
 import getLikeCount from "./getLikeCount";
-import checkIsAdmin from "./checkIsAdmin";
 
 const loadPost = async () => {
   try{
