@@ -60,7 +60,7 @@ const Comments = () => {
                     <footer className="addComment">
                         <input type="text" placeholder="Add a comment" ref={commentRef} />
                         <button onClick={commentAddition} disabled={loadingbtn}>
-                            {!loadingbtn ? "Send" :  (<ReactLoading type={"balls"} color={"white"} height={667} width={375} />)}
+                            {!loadingbtn ? "Send" :  <ReactLoading type={"spin"} color={"#fff"} height={20} width={20} /> }
                         </button>
                     </footer>
                 </div>
